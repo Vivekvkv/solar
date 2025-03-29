@@ -39,10 +39,11 @@ public class SecurityConfig {
 @Bean
 @Order(0)
 public SecurityFilterChain api(HttpSecurity http) throws Exception {
-      http.authorizeHttpRequests(authz -> authz
+    http.csrf(htppcs->htppcs.disable())
+    .authorizeHttpRequests(authz -> authz
       .requestMatchers("/admin/**").hasRole("ADMIN")
       .requestMatchers("/user/**").hasRole("USER")
-      .requestMatchers("/auth/login", "/auth/**").permitAll()
+      .requestMatchers("/auth/**").permitAll()
       .anyRequest().authenticated());
      http.exceptionHandling(authException -> authException
      .authenticationEntryPoint(

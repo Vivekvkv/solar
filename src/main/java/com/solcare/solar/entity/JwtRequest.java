@@ -11,4 +11,5 @@ public class JwtRequest {
 
 	private String email;
 	private String password;
+	private Long mobileNumber;
 }

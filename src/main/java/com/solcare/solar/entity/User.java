@@ -38,6 +38,11 @@ public class User implements UserDetails{
 	private String name;
 	private String email;
 	private String password;
+	private Long mobileNumber;
+	private String otp;
+    private Long otpCreationTime;  // OTP creation time
+    private Long otpRequestCount;  // Number of OTP requests
+    private Long otpRequestTime;  // Time of last OTP request
 //	private String username;
 
 	@ManyToMany(fetch = FetchType.EAGER)
